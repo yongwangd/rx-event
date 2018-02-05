@@ -1,8 +1,4 @@
-import event$, {
-  emitEvent,
-  eventPayloadOfType$,
-  eventOfTypes$
-} from 'rx-event';
+import event$, { emitEvent, eventPayloadOfType$, eventOfTypes$ } from '../dist';
 
 function emitSomeEvents() {
   emitEvent('user-request', 'john');
