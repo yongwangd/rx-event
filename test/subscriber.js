@@ -20,10 +20,12 @@ eventOfTypes$('user-request', 'user-fetched').subscribe(events =>
 { type: 'user-fetched', payload: { name: 'Jack Davis', age: 40 } }
 */
 
-eventPayloadOfType$('user-fetched').subscribe(user => console.log(user));
-/* output
- {name: 'John Doe', age: 26}
- {name: 'Jack Davis', age: 40}
+eventPayloadOfType$('user-fetched')
+  .map(user => user.name)
+  .subscribe(name => console.log(name));
+/*
+    John Doe
+    Jack Davis
 */
 
 //get the events without payload
